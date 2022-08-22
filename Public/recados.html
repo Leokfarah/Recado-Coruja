@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/Css/reset.css">
+    <link rel="stylesheet" href="./Assets/Css/recados.css">
+    <link rel="shortcut icon" href="./Assets/Images/Favicon/favicon.ico">
+    <title>Recados</title>
+</head>
+
+<body>
+    <aside>
+        <img src="./Assets/Images/castle cliff.jpg" alt="Hogwarts Castle.jpg">
+    </aside>
+    
+    <h1>Meus Recados:</h1>
+
+    <form>
+        <h3>Adicionar novo recado:</h3>
+        <div class="flex w-full">
+            <div class="input-wrapper">
+                <input type="text" id="tarefa" class="form-control" placeholder="Tarefa" name="tarefa" value="">
+                <label class="control-label"for="tarefa">Tarefa</label>
+            </div>
+    
+            <div class="input-wrapper">
+                <input type="text" id="descricao" class="form-control" placeholder="Descrição" name="descricao" value="">
+                <label class="control-label" for="descricao">Descrição</label>
+            </div>
+        </div>
+        <input type="button" value="Salvar" id="salvarBtn">
+    </form>
+
+
+<div class="w-full flex" id="tabela">
+    <table  class=" w-full">
+        <thead>
+            <tr id="linha1">
+                <td>#</td>
+                <td>Tarefa</td>
+                <td>Descrição</td>
+                <td>Ação</td>
+            </tr>
+        </thead>
+
+        <tbody id="tabelaRecados">
+        </tbody>
+    </table>
+</div>
+
+<input type="button" id="logoutBtn" value="Logout">
+
+<div id="modal">
+    <div id="modalEdit">
+
+        <form>
+            <h3>Editar recado:</h3>
+            <div class="flex w-full">
+                <div class="input-wrapper">
+                    <input type="text" id="editTarefa" class="form-control" placeholder="Tarefa" name="tarefa" value="">
+                    <label class="control-label" for="tarefa">Tarefa</label>
+                </div>
+        
+                <div class="input-wrapper">
+                    <input type="text" id="editDescricao" class="form-control" placeholder="Descrição" name="descricao" value="">
+                    <label class="control-label" for="descricao">Descrição</label>
+                </div>
+            </div>
+            <button type="button" id="salvarBtnModal">Salvar</button>
+            <button type="button" id="cancelarBtnModal">Cancelar</button>
+        </form>
+
+    </div>
+</div>
+
+    <script src="./Assets/Js/recados.js"></script>
+</body>
+</html>
