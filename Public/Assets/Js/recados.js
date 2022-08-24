@@ -6,7 +6,7 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
     atualizaBdRecados()
     localStorage.removeItem('usuarioLogado')
     setTimeout(() => {
-        window.location.href = 'index.html'
+        window.location.href = 'logout.html'
     }, 1000)
 })
 
