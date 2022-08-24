@@ -1,14 +1,16 @@
-aside>img {
-    position: absolute;
-    left: 0;
-    top: 0;
+body {
+    background-image: url(../Images/castle_cliff.jpg);
+    background-size: cover;
+}
+
+.container {
+    background-color: rgb(0, 0, 0, 0.5);
     width: 100%;
-    height: auto;
-    opacity: 20%;
+    height: 100%;
 }
 
 h1 {
-    margin-top: 30px;
+    padding-top: 30px;
     margin-bottom: 50px;
     margin-left: 20px;
 }
@@ -68,7 +70,7 @@ form>h3 {
 #salvarBtn:hover {
     background-color: #f4f4f4;
     transition: 0.6s ease-in-out;
-    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
+    filter: drop-shadow(1px 1px 15px rgb(35, 205, 243));
 }
 
 #salvarBtn:active {
@@ -136,7 +138,9 @@ form>h3 {
 #logoutBtn:hover {
     background-color: #f4f4f4;
     transition: 0.6s ease-in-out;
-    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
+    animation-name: odete;
+    animation-duration: 2s;
+    animation-delay: 0s;
     color: black;
 }
 
@@ -167,7 +171,7 @@ form>h3 {
 
 .form-control:focus {
     transition: 1s ease-in-out;
-    filter: drop-shadow(1px 1px 8px rgb(35, 205, 243))
+    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
 }
 
 .control-label {
@@ -282,4 +286,62 @@ table .linhas td {
     color: black;
     border: black 2px solid;
     transition: 0.1s ease-in-out;
+}
+
+@keyframes odete {
+    0% {
+        filter: drop-shadow(1px 1px 20px rgb(35, 205, 243));
+    }
+
+    5% {
+        filter: drop-shadow(1px 1px 20px rgb(35, 167, 243));
+    }
+
+    10% {
+        filter: drop-shadow(1px 1px 20px rgb(35, 122, 243));
+    }
+
+    15% {
+        filter: drop-shadow(1px 1px 20px rgb(35, 84, 243));
+    }
+
+    20% {
+        filter: drop-shadow(1px 1px 20px rgb(29, 51, 216));
+    }
+
+    25% {
+        filter: drop-shadow(1px 1px 20px rgb(10, 14, 250));
+    }
+
+    30% {
+        filter: drop-shadow(1px 1px 20px #003cff);
+    }
+
+    40% {
+        filter: drop-shadow(1px 1px 20px #0000ff);
+    }
+
+    50% {
+        filter: drop-shadow(1px 1px 20px #1e0bd0);
+    }
+
+    60% {
+        filter: drop-shadow(1px 1px 20px #2510a3);
+    }
+
+    70% {
+        filter: drop-shadow(1px 1px 20px #241178);
+    }
+
+    80% {
+        filter: drop-shadow(1px 1px 20px #1f104f);
+    }
+
+    90% {
+        filter: drop-shadow(1px 1px 20px #170b2a);
+    }
+
+    100% {
+        filter: drop-shadow(1px 1px 20px #000000);
+    }
 }

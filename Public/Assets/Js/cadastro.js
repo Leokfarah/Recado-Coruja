@@ -63,7 +63,22 @@ function validarDados(email, password, password2) {
         return false
     }
 
-    return true
+    // na regex da senha não rola com _ , * (perguntar) adicionar \ na frente dos caracteres esp
+    // para email n funciona (/(?=.*[A-Z][a-z][0-9])+@(?=.*[A-Z][a-z])+(.?=.*[A-Z][a-z])+/))
+    // (/\S+@\S+\.\S/)) (S === string)
+    // perguntar sobre a sintaxe de dentro dos regex / \ () [] ?=* ^
+
+    if (email.match(/\S+@\S+\.\S/)) {
+        if (password.match(/^(?=.*[!#@$%&'.-/+|])(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{4,}$/)) {
+            return true
+        } else {
+            alert("Sua senha deve conter pelo menos 4 DÍGITOS sendo: \n\n um NÚMERO; \n um CARACTER ESPECIAL (' ! | # | @ | $ | % | & | . | - | , | / | = '); \n uma letra MINÚSCULA e uma MAISÚCULA.")
+            return false
+        }
+    } else {
+        alert("Escreva um e-mail válido")
+    }
+
 }
 
 function salvarDados(usuarios) {

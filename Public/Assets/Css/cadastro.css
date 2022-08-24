@@ -1,0 +1,148 @@
+body {
+    background-image: url(../Images/winter_diagon_alley.jpg);
+    background-size: cover;
+}
+
+.container {
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    padding: 100px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 20vh;
+}
+
+form {
+    box-shadow: 16px 16px 10px black, -0.4em 0 0.9em rgba(35, 205, 243, 0.565);
+    opacity: 90%;
+    background-color: #202328;
+    padding: 50px;
+    width: 40%;
+    border-radius: 15px;
+    margin-left: 25vw;
+}
+
+#logar {
+    padding: 3px;
+    margin-bottom: 13px;
+    width: 300px;
+    border: solid 1px rgb(35, 205, 243);
+    border-radius: 5px;
+}
+
+#logar:hover {
+    border: black solid 1px;
+    background-color: #f4f4f4;
+    transition: 0.6s ease-in-out;
+    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
+}
+
+#logar:active {
+    transition: 0.2s ease-in-out;
+    background: rgb(35, 205, 243);
+}
+
+#criarAcc {
+    padding: 3px;
+    margin-bottom: 13px;
+    width: 300px;
+    border: solid 1px rgb(35, 205, 243);
+    border-radius: 5px;
+}
+
+#criarAcc:active {
+    transition: 0.1s ease-in-out;
+    background: rgb(35, 205, 243);
+}
+
+#criarAcc:hover {
+    border: black solid 1px;
+    background-color: #f4f4f4;
+    transition: 0.6s ease-in-out;
+    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
+}
+
+form>h2 {
+    margin-bottom: 35px;
+}
+
+form>a:link {
+    text-decoration: none;
+    color: rgba(0, 255, 255, 0.55);
+    filter: blur(0.6px);
+}
+
+form>a:hover {
+    color: rgb(35, 205, 243);
+    transition: 0.8s ease-in-out;
+    filter: blur(0);
+}
+
+form>a:visited {
+    color: rgba(0, 255, 255, 0.55);
+    text-decoration: wavy;
+    filter: blur(0.8px);
+}
+
+form>a:active {
+    color: #f4f4f4;
+    filter: drop-shadow(1px 1px 15px rgb(35, 205, 243));
+}
+
+.input-wrapper {
+    position: relative;
+    margin: 20px auto;
+    width: 400px;
+}
+
+.form-control {
+    display: block;
+    line-height: 2em;
+    margin: 0;
+    padding-left: 10px;
+    margin-bottom: 25px;
+    width: 400px;
+    font-size: medium;
+    border: 1px solid #f4f4f4;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+
+.form-control:focus {
+    transition: 1s ease-in-out;
+    filter: drop-shadow(1px 1px 8px rgb(35, 205, 243))
+}
+
+.control-label {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    bottom: 1.7rem;
+    color: rgba(35, 205, 243, 0.624);
+    transition: 0.8s ease-in-out transform;
+    transform: translateY(10px);
+    font-size: 12px;
+}
+
+.form-control:placeholder-shown+.control-label {
+    z-index: -1;
+    transition: 0.8s ease-in-out;
+}
+
+.form-control:not(:placeholder-shown)+.control-label,
+.form-control:focus:not(:placeholder-shown)+.control-label {
+    visibility: visible;
+    z-index: 3;
+    opacity: 1;
+    transform: translateY(-10px);
+    transition: 0.8s ease-in-out transform;
+}
