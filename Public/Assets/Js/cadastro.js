@@ -64,10 +64,10 @@ function validarDados(email, password, password2) {
     }
 
     if (email.match(/\S+@\S+\.\S/)) {
-        if (password.match(/^(?=.*[!#@$%&'.-/+|])(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{4,}$/)) {
+        if (password.match(/^(?=.*[!#@$%&'.\-\*\_\,\*/~`\[\{\}\]=+|:;"\\^(\)´])(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{4,}$/)) {
             return true
         } else {
-            alert("Sua senha deve conter pelo menos 4 DÍGITOS sendo: \n\n um NÚMERO; \n um CARACTER ESPECIAL (' ! | # | @ | $ | % | & | . | - | , | / | = '); \n uma letra MINÚSCULA e uma MAISÚCULA.")
+            alert("Sua senha deve conter pelo menos 4 DÍGITOS sendo: \n\n um NÚMERO; \n um CARACTER ESPECIAL; \n uma letra MINÚSCULA e uma MAISÚCULA.")
             return false
         }
     } else {
