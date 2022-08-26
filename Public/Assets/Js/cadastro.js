@@ -30,22 +30,16 @@ document.getElementById('criarAcc').addEventListener('click', (e) => {
 })
 
 const showImgPass = document.getElementById('newPassword')
-showImgPass.addEventListener('focus', mostraImg)
+showImgPass.addEventListener('focus', mostraDumbledore)
 
 const hideImgPass = document.getElementById('newPassword')
-hideImgPass.addEventListener('blur', escondeImg)
+hideImgPass.addEventListener('blur', escondeDumbledore)
 
-const showImgPassRe = document.getElementById('newPassword2')
-showImgPassRe.addEventListener('focus', mostraImg)
-
-const hideImgPassRe = document.getElementById('newPassword2')
-hideImgPassRe.addEventListener('blur', escondeImg)
-
-function mostraImg() {
+function mostraDumbledore() {
     document.getElementById('passwordImage').style.display = 'block'
 }
 
-function escondeImg() {
+function escondeDumbledore() {
     document.getElementById('passwordImage').style.display = 'none'
 }
 
@@ -86,7 +80,10 @@ function validarDados(email, password, password2) {
         if (password.match(/^(?=.*[!#@$%&'.\-\*\_\,/~`\[\{\}\]=+|:;"\\^(\)´])(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{4,}$/)) {
             return true
         } else {
-            alert("Sua senha deve conter pelo menos 4 DÍGITOS sendo: \n\n Um NÚMERO; \n Um CARACTER ESPECIAL; \n Uma letra MINÚSCULA e uma MAISÚCULA.")
+            mostraDumbledore()
+            setTimeout(() => {
+                escondeDumbledore()
+            }, 2500)
             return false
         }
     } else {
