@@ -11,6 +11,7 @@ body {
 
 main {
     padding: 100px;
+    padding-top: 80px;
     position: relative;
     z-index: 2;
     text-align: center;
@@ -25,6 +26,27 @@ form {
     width: 40%;
     border-radius: 15px;
     margin-left: 25vw;
+}
+
+#passwordImage {
+    position: absolute;
+    left: 1px;
+    bottom: -10px;
+    display: none;
+    size: 5px;
+    animation-name: transitionImg;
+    animation-duration: 0.8s;
+}
+
+@keyframes transitionImg {
+    0% {
+        transform: translateY(100%);
+    }
+}
+
+aside>img {
+    width: 40%;
+    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
 }
 
 #logar {

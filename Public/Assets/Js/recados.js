@@ -77,7 +77,7 @@ function editarMensagem(id) {
     setTimeout(() => {
         mostraModal()
         modalImprimeRecado(id)
-    }, 500)
+    }, 200)
 
 
     const salvarBtnModal = document.getElementById('salvarBtnModal')
