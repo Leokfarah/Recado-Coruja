@@ -83,7 +83,7 @@ function validarDados(email, password, password2) {
             mostraDumbledore()
             setTimeout(() => {
                 escondeDumbledore()
-            }, 2500)
+            }, 3000)
             return false
         }
     } else {
