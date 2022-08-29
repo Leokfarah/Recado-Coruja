@@ -20,34 +20,35 @@ document.getElementById('criarAcc').addEventListener('click', (e) => {
 
             usuarios.push(usuario)
             salvarDados(usuarios)
-            alert("Conta criada com sucesso!")
+            mostraLuna()
+            setTimeout(() => {
+                escondeLuna()
+            }, 3000)
             reset(email, password, password2)
             setTimeout(() => {
                 window.location.href = 'index.html'
-            }, 1000)
+            }, 3000)
         }
     }
 })
 
-const showImgPass = document.getElementById('newPassword')
-showImgPass.addEventListener('focus', mostraDumbledore)
+const showDumbledoreAlert = document.getElementById('newPassword')
+showDumbledoreAlert.addEventListener('focus', mostraDumbledore)
 
-const hideImgPass = document.getElementById('newPassword')
-hideImgPass.addEventListener('blur', escondeDumbledore)
+const hideDumbledoreAlert = document.getElementById('newPassword')
+hideDumbledoreAlert.addEventListener('blur', escondeDumbledore)
 
-function mostraDumbledore() {
-    document.getElementById('passwordImage').style.display = 'block'
-}
-
-function escondeDumbledore() {
-    document.getElementById('passwordImage').style.display = 'none'
-}
+const hideDumbledorePass = document.getElementById('dumbledoreBtn')
+hideDumbledorePass.addEventListener('click', escondeDumbledorePass)
 
 function verificarEmail(email) {
     let existe = usuarios.some((valor) => valor.login === email.value)
 
     if (existe) {
-        alert("Email já utilizado")
+        mostraMcgonagall3()
+        setTimeout(() => {
+            escondeMcgonagall3()
+        }, 3000)
         return false
     }
 
@@ -57,22 +58,34 @@ function verificarEmail(email) {
 function validarDados(email, password, password2) {
 
     if (!email) {
-        alert("Você deve preencher o email")
+        mostraMcgonagall1()
+        setTimeout(() => {
+            escondeMcgonagall1()
+        }, 3000)
         return false
     }
 
     if (!password.length) {
-        alert("Você deve preencher sua senha")
+        mostraHermione1()
+        setTimeout(() => {
+            escondeHermione1()
+        }, 3000)
         return false
     }
 
     if (!password2.length) {
-        alert("Você deve repetir sua senha")
+        mostraHermione2()
+        setTimeout(() => {
+            escondeHermione2()
+        }, 3000)
         return false
     }
 
     if (password !== password2) {
-        alert("As senhas não conferem")
+        mostraHermione3()
+        setTimeout(() => {
+            escondeHermione3()
+        }, 3000)
         return false
     }
 
@@ -83,11 +96,14 @@ function validarDados(email, password, password2) {
             mostraDumbledore()
             setTimeout(() => {
                 escondeDumbledore()
-            }, 3000)
+            }, 5000)
             return false
         }
     } else {
-        alert("Escreva um e-mail válido")
+        mostraMcgonagall2()
+        setTimeout(() => {
+            escondeMcgonagall2()
+        }, 3000)
         return false
     }
 
@@ -106,4 +122,64 @@ function reset(email, password, password2) {
     email.value = ''
     password.value = ''
     password2.value = ''
+}
+
+function mostraDumbledore() {
+    document.getElementById('dumbledoreAlert').style.display = 'block'
+}
+function escondeDumbledore() {
+    document.getElementById('dumbledoreAlert').style.display = 'none'
+}
+
+function escondeDumbledorePass() {
+    document.getElementById('dumbledoreBox').style.display = 'none'
+}
+
+function mostraMcgonagall1() {
+    document.getElementById('mcgonagallAlert1').style.display = 'block'
+}
+function escondeMcgonagall1() {
+    document.getElementById('mcgonagallAlert1').style.display = 'none'
+}
+
+function mostraMcgonagall2() {
+    document.getElementById('mcgonagallAlert2').style.display = 'block'
+}
+function escondeMcgonagall2() {
+    document.getElementById('mcgonagallAlert2').style.display = 'none'
+}
+
+function mostraMcgonagall3() {
+    document.getElementById('mcgonagallAlert3').style.display = 'block'
+}
+function escondeMcgonagall3() {
+    document.getElementById('mcgonagallAlert3').style.display = 'none'
+}
+
+function mostraHermione1() {
+    document.getElementById('hermioneAlert1').style.display = 'block'
+}
+function escondeHermione1() {
+    document.getElementById('hermioneAlert1').style.display = 'none'
+}
+
+function mostraHermione2() {
+    document.getElementById('hermioneAlert2').style.display = 'block'
+}
+function escondeHermione2() {
+    document.getElementById('hermioneAlert2').style.display = 'none'
+}
+
+function mostraHermione3() {
+    document.getElementById('hermioneAlert3').style.display = 'block'
+}
+function escondeHermione3() {
+    document.getElementById('hermioneAlert3').style.display = 'none'
+}
+
+function mostraLuna() {
+    document.getElementById('lunaAlert').style.display = 'block'
+}
+function escondeLuna() {
+    document.getElementById('lunaAlert').style.display = 'none'
 }

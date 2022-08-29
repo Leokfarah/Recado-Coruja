@@ -67,6 +67,27 @@ form {
     filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
 }
 
+.alertbox {
+    position: fixed;
+    left: 1px;
+    bottom: -10px;
+    size: 5px;
+}
+
+.alertImg {
+    width: 40%;
+    display: none;
+    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
+    animation-name: transitionImg;
+    animation-duration: 0.8s;
+}
+
+@keyframes transitionImg {
+    0% {
+        transform: translateY(100%);
+    }
+}
+
 form>h2 {
     margin-bottom: 35px;
 }

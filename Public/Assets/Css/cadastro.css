@@ -28,12 +28,39 @@ form {
     margin-left: 25vw;
 }
 
-#passwordImage {
-    position: absolute;
+#dumbledoreBox {
+    position: fixed;
+    right: -660px;
+    bottom: -10px;
+    size: 5px;
+}
+
+#dumbledorePass {
+    width: 40%;
+    display: fixed;
+    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
+}
+
+#dumbledoreBtn {
+    background-color: #f4f4f400;
+    border: #f4f4f400;
+    color: rgb(35, 205, 243);
+    position: fixed;
+    right: 195px;
+    bottom: 10px;
+}
+
+.alertbox {
+    position: fixed;
     left: 1px;
     bottom: -10px;
-    display: none;
     size: 5px;
+}
+
+.alertImg {
+    width: 40%;
+    display: none;
+    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
     animation-name: transitionImg;
     animation-duration: 0.8s;
 }
@@ -42,11 +69,6 @@ form {
     0% {
         transform: translateY(100%);
     }
-}
-
-aside>img {
-    width: 40%;
-    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
 }
 
 #logar {

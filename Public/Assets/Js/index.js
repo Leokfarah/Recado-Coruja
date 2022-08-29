@@ -1,5 +1,4 @@
 if (localStorage.getItem('usuarioLogado')) {
-    alert('Você já esta logado!')
     window.location.href = 'recados.html'
 }
 
@@ -25,7 +24,10 @@ document.getElementById('logar').addEventListener('click', (e) => {
         }, 1000)
 
     } else {
-        alert('🧙‍♂️ YOU SHALL NOT PASS!! \n\n Verifique suas credenciais!')
+        mostraDolores()
+        setTimeout(() => {
+            escondeDolores()
+        }, 5000)
     }
 })
 
@@ -36,4 +38,11 @@ function buscarBd() {
 
 function salvarDados(usuarios) {
     localStorage.setItem('usuarioLogado', JSON.stringify(usuarios))
+}
+
+function mostraDolores() {
+    document.getElementById('doloresAlert').style.display = 'block'
+}
+function escondeDolores() {
+    document.getElementById('doloresAlert').style.display = 'none'
 }

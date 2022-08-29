@@ -36,7 +36,10 @@ function criarRecados() {
     const descricao = document.getElementById('descricao').value
 
     if (!tarefa || !descricao) {
-        alert("OOPSIE DAISY! \n \nDigite um recado")
+        mostraHagrid()
+        setTimeout(() => {
+            escondeHagrid()
+        }, 3000)
         return
     }
 
@@ -120,17 +123,39 @@ function mostraModal() {
 }
 
 function apagarMensagem(id) {
+    mostradobby()
 
-    if (confirm('Tem certeza que deseja deletar este recado?')) {
+    const dobbyCancell = document.getElementById('cancelDobby')
+    dobbyCancell.addEventListener('click', escondeDobby)
+
+    const confirmDobby = document.getElementById('confirmDobby')
+    confirmDobby.addEventListener('click', () => {
         const remove = usuario.recados.filter((recados) => recados.id !== id)
         usuario.recados = remove
         localStorage.setItem('usuarioLogado', JSON.stringify(usuario))
 
         imprimeRecados()
-    }
+        escondeDobby()
+    })
+
 }
 
 function reset() {
     document.getElementById('tarefa').value = ''
     document.getElementById('descricao').value = ''
+}
+
+function mostraHagrid() {
+    document.getElementById('hagridAlert').style.display = 'block'
+}
+function escondeHagrid() {
+    document.getElementById('hagridAlert').style.display = 'none'
+}
+
+function mostradobby() {
+    document.getElementById('dobbyBox').style.display = 'block'
+}
+
+function escondeDobby() {
+    document.getElementById('dobbyBox').style.display = 'none'
 }
