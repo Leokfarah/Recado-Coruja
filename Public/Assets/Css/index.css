@@ -7,30 +7,42 @@ body {
     background-color: rgb(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 main {
-    padding: 100px;
+    padding: 10%;
     position: relative;
     z-index: 2;
-    text-align: center;
-    top: 20vh;
+    display: flex;
+    place-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
-    box-shadow: 16px 16px 10px black, -0.4em 0 0.9em rgba(35, 205, 243, 0.565);
+    box-shadow: 16px 16px 10px black, -0.4em 0 0.9em rgb(35 205 243 / 56%);
     opacity: 90%;
     background-color: #202328;
-    padding: 50px;
-    width: 40%;
+    padding: 30px;
+    width: 100%;
+    height: 68%;
     border-radius: 15px;
-    margin-left: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1vh;
 }
 
 #logar {
+    flex-shrink: 1;
     padding: 3px;
     margin-bottom: 13px;
-    width: 300px;
+    width: 20vw;
     border: solid 1px rgb(35, 205, 243);
     border-radius: 5px;
 }
@@ -47,36 +59,19 @@ form {
     background: rgb(35, 205, 243);
 }
 
-#criarAcc {
-    padding: 3px;
-    margin-bottom: 13px;
-    width: 300px;
-    border: solid 1px rgb(35, 205, 243);
-    border-radius: 5px;
-}
-
-#criarAcc:active {
-    transition: 0.1s ease-in-out;
-    background: rgb(35, 205, 243);
-}
-
-#criarAcc:hover {
-    border: black solid 1px;
-    background-color: #f4f4f4;
-    transition: 0.6s ease-in-out;
-    filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
-}
 
 .alertbox {
     position: fixed;
     left: 1px;
     bottom: -10px;
     size: 5px;
+    z-index: 99999;
 }
 
 .alertImg {
     width: 40%;
     display: none;
+    z-index: 99999;
     filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
     animation-name: transitionImg;
     animation-duration: 0.8s;
@@ -117,8 +112,8 @@ form>a:active {
 
 .input-wrapper {
     position: relative;
-    margin: 20px auto;
-    width: 400px;
+    margin: 5px;
+    width: 100%;
 }
 
 .form-control {
@@ -126,8 +121,8 @@ form>a:active {
     line-height: 2em;
     margin: 0;
     padding-left: 10px;
-    margin-bottom: 25px;
-    width: 400px;
+    margin-bottom: 20px;
+    width: 100%;
     font-size: medium;
     border: 1px solid #f4f4f4;
     background-color: #f4f4f4;
@@ -150,7 +145,7 @@ form>a:active {
     bottom: 1.7rem;
     color: rgba(35, 205, 243, 0.624);
     transition: 0.8s ease-in-out transform;
-    transform: translateY(10px);
+    transform: translateY(0);
     font-size: 12px;
 }
 
@@ -164,6 +159,6 @@ form>a:active {
     visibility: visible;
     z-index: 3;
     opacity: 1;
-    transform: translateY(-10px);
+    transform: translateY(-3.5vh);
     transition: 0.8s ease-in-out transform;
 }
