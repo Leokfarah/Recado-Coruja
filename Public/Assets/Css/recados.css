@@ -235,7 +235,7 @@ form>h3 {
     background-color: #f4f4f4;
     transition: 0.6s ease-in-out;
     animation-name: odete;
-    animation-duration: 2s;
+    animation-duration: 5s;
     color: black;
 }
 
@@ -390,57 +390,42 @@ table .linhas td {
         filter: drop-shadow(1px 1px 20px rgb(35, 205, 243));
     }
 
-    5% {
-        filter: drop-shadow(1px 1px 20px rgb(35, 167, 243));
-    }
-
     10% {
-        filter: drop-shadow(1px 1px 20px rgb(35, 122, 243));
-    }
-
-    15% {
-        filter: drop-shadow(1px 1px 20px rgb(35, 84, 243));
+        filter: drop-shadow(1px 1px 20px blue);
     }
 
     20% {
-        filter: drop-shadow(1px 1px 20px rgb(29, 51, 216));
-    }
-
-    25% {
-        filter: drop-shadow(1px 1px 20px rgb(10, 14, 250));
+        filter: drop-shadow(1px 1px 20px red);
     }
 
     30% {
-        filter: drop-shadow(1px 1px 20px #003cff);
+        filter: drop-shadow(1px 1px 20px yellow);
     }
 
     40% {
-        filter: drop-shadow(1px 1px 20px #0000ff);
+        filter: drop-shadow(1px 1px 20px green);
     }
 
     50% {
-        filter: drop-shadow(1px 1px 20px #1e0bd0);
+        filter: drop-shadow(1px 1px 20px black);
     }
 
     60% {
-        filter: drop-shadow(1px 1px 20px #2510a3);
+        filter: drop-shadow(1px 1px 20px green);
     }
 
     70% {
-        filter: drop-shadow(1px 1px 20px #241178);
+        filter: drop-shadow(1px 1px 20px yellow);
     }
 
     80% {
-        filter: drop-shadow(1px 1px 20px #1f104f);
-    }
-
-    90% {
-        filter: drop-shadow(1px 1px 20px #170b2a);
+        filter: drop-shadow(1px 1px 20px red);
     }
 
     100% {
-        filter: drop-shadow(1px 1px 20px #000000);
+        filter: drop-shadow(1px 1px 20px blue);
     }
+
 }
 
 @keyframes transitionModal {
