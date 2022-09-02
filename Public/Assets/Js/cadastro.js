@@ -38,9 +38,6 @@ showDumbledoreAlert.addEventListener('focus', mostraDumbledore)
 const hideDumbledoreAlert = document.getElementById('newPassword')
 hideDumbledoreAlert.addEventListener('blur', escondeDumbledore)
 
-const hideDumbledorePass = document.getElementById('dumbledoreBtn')
-hideDumbledorePass.addEventListener('click', escondeDumbledorePass)
-
 function verificarEmail(email) {
     let existe = usuarios.some((valor) => valor.login === email.value)
 

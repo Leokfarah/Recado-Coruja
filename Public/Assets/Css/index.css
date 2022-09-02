@@ -41,7 +41,7 @@ form {
 #logar {
     padding: 3px;
     margin-bottom: 13px;
-    width: 18vw;
+    width: 19vw;
     font-size: clamp(0.7rem, 2vw, 1rem);
     border: solid 1px rgb(35, 205, 243);
     border-radius: 5px;
@@ -72,8 +72,7 @@ form {
     display: none;
     z-index: 99999;
     filter: drop-shadow(1px 1px 13px rgb(35, 205, 243));
-    animation-name: transitionImg;
-    animation-duration: 0.8s;
+    animation: transitionImg 0.8s linear;
 }
 
 @keyframes transitionImg {
