@@ -29,9 +29,9 @@ function atualizaBdRecados() {
 const salvarMensagemBtn = document.getElementById('salvarBtn')
 salvarMensagemBtn.addEventListener('click', criarRecados)
 
-let id = 1
 
 function criarRecados() {
+    let id = 1
     const tarefa = document.getElementById('tarefa').value
     const descricao = document.getElementById('descricao').value
 
@@ -43,8 +43,17 @@ function criarRecados() {
         return
     }
 
+    if (usuario.recado.length > 0) {
+        const idMaiorRecado = usuario.recados.reduce((acc, next) => {
+            if (acc.id < next.id) {
+                return next
+            } return acc
+        })
+
+        id = idMaiorRecado.id + 1
+    }
+
     usuario.recados.push({ id, tarefa, descricao })
-    id++
 
     localStorage.setItem('usuarioLogado', JSON.stringify(usuario))
 
