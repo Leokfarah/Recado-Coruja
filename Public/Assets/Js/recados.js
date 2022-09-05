@@ -43,7 +43,7 @@ function criarRecados() {
         return
     }
 
-    if (usuario.recado.length > 0) {
+    if (usuario.recados.length > 0) {
         const idMaiorRecado = usuario.recados.reduce((acc, next) => {
             if (acc.id < next.id) {
                 return next
