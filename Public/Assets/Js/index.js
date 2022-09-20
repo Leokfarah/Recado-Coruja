@@ -1,48 +1,46 @@
+"use strict";
 if (localStorage.getItem('usuarioLogado')) {
-    window.location.href = 'recados.html'
+    window.location.href = 'recados.html';
 }
-
-document.getElementById('logar').addEventListener('click', (e) => {
-    e.preventDefault()
-
-    const email = document.getElementById('email').value
-    const password = document.getElementById('password').value
-    const log = buscarBd()
-
-
-    let verificarUsuario = log.findIndex((usuario) => usuario.login === email && usuario.password === password)
+let logar = document.getElementById('logar');
+logar.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const log = buscarBdLog();
+    let verificarUsuario = log.findIndex((usuario) => usuario.login === email.value && usuario.password === password.value);
     if (verificarUsuario >= 0) {
         const usuarioLogado = {
             login: log[verificarUsuario].login,
             recados: log[verificarUsuario].recados,
-        }
-
-        salvarDados(usuarioLogado)
-
+        };
+        salvarDadosLog(usuarioLogado);
         setTimeout(() => {
-            window.location.href = 'recados.html'
-        }, 1000)
-
-    } else {
-        mostraDolores()
-        setTimeout(() => {
-            escondeDolores()
-        }, 5000)
+            window.location.href = 'recados.html';
+        }, 1000);
     }
-})
-
-function buscarBd() {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
-    return usuarios
+    else {
+        mostraDolores();
+        setTimeout(() => {
+            escondeDolores();
+        }, 5000);
+    }
+});
+function buscarBdLog() {
+    const usuarios = localStorage.getItem('usuarios') || [];
+    if (typeof usuarios === 'string') {
+        return JSON.parse(usuarios);
+    }
+    return [];
 }
-
-function salvarDados(usuarios) {
-    localStorage.setItem('usuarioLogado', JSON.stringify(usuarios))
+function salvarDadosLog(usuarios) {
+    localStorage.setItem('usuarioLogado', JSON.stringify(usuarios));
 }
-
 function mostraDolores() {
-    document.getElementById('doloresAlert').style.display = 'block'
+    let dolores = document.getElementById('doloresAlert');
+    dolores.style.display = 'block';
 }
 function escondeDolores() {
-    document.getElementById('doloresAlert').style.display = 'none'
+    let dolores = document.getElementById('doloresAlert');
+    dolores.style.display = 'none';
 }
