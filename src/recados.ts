@@ -82,7 +82,6 @@ function imprimeRecados() {
     }
 }
 
-
 let modalTarefa = document.getElementById('editTarefa') as HTMLInputElement;
 let modalDescricao = document.getElementById('editDescricao') as HTMLInputElement;
 
@@ -124,33 +123,35 @@ function modalEditaRecado(id: number) {
 }
 
 function fechaModal() {
-    let modal = document.getElementById('modal') as HTMLElement;
+    let modal = document.getElementById('modal') as HTMLDivElement;
     modal.style.display = 'none'
 }
 
 function mostraModal() {
-    let modal = document.getElementById('modal') as HTMLElement;
+    let modal = document.getElementById('modal') as HTMLDivElement;
     modal.style.display = 'block'
 }
+
+
 
 function apagarMensagem(id: number) {
     mostraDobby()
 
-    const confirmDobby = document.getElementById('confirmDobby') as HTMLElement;
-    confirmDobby.addEventListener('click', () => {
+    const confirmDobby = document.getElementById('confirmDobby') as HTMLButtonElement;
+    confirmDobby.onclick = () => {
         const remove = recados.filter((recado) => recado.id !== id)
         recados = remove
         localStorage.setItem('usuarioLogado', JSON.stringify({ login, recados }))
 
         imprimeRecados()
         escondeDobby()
-    })
+    }
 
-    const dobbyCancell = document.getElementById('cancelDobby') as HTMLElement;
-    dobbyCancell.addEventListener('click', escondeDobby)
+    const dobbyCancell = document.getElementById('cancelDobby') as HTMLButtonElement;
+    dobbyCancell.onclick = escondeDobby
 }
 
-function reset() {
+function reset(): void {
     let tarefa = document.getElementById('tarefa') as HTMLInputElement;
     tarefa.value = ''
     let descricao = document.getElementById('descricao') as HTMLInputElement;
@@ -158,22 +159,21 @@ function reset() {
 }
 
 function mostraHagrid() {
-    let hagrid = document.getElementById('hagridAlert') as HTMLElement;
+    let hagrid = document.getElementById('hagridAlert') as HTMLImageElement;
     hagrid.style.display = 'block'
 }
 
 function escondeHagrid() {
-    let hagrid = document.getElementById('hagridAlert') as HTMLElement;
+    let hagrid = document.getElementById('hagridAlert') as HTMLImageElement;
     hagrid.style.display = 'none'
 }
 
 function mostraDobby() {
-    let dobby = document.getElementById('dobbyBox') as HTMLElement;
+    let dobby = document.getElementById('dobbyBox') as HTMLDivElement;
     dobby.style.display = 'block'
 }
 
 function escondeDobby() {
-    let dobby = document.getElementById('dobbyBox') as HTMLElement;
+    let dobby = document.getElementById('dobbyBox') as HTMLDivElement;
     dobby.style.display = 'none'
-    window.location.reload()
 }

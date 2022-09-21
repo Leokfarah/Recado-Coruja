@@ -109,15 +109,15 @@ function mostraModal() {
 function apagarMensagem(id) {
     mostraDobby();
     const confirmDobby = document.getElementById('confirmDobby');
-    confirmDobby.addEventListener('click', () => {
+    confirmDobby.onclick = () => {
         const remove = recados.filter((recado) => recado.id !== id);
         recados = remove;
         localStorage.setItem('usuarioLogado', JSON.stringify({ login, recados }));
         imprimeRecados();
         escondeDobby();
-    });
+    };
     const dobbyCancell = document.getElementById('cancelDobby');
-    dobbyCancell.addEventListener('click', escondeDobby);
+    dobbyCancell.onclick = escondeDobby;
 }
 function reset() {
     let tarefa = document.getElementById('tarefa');
@@ -140,5 +140,4 @@ function mostraDobby() {
 function escondeDobby() {
     let dobby = document.getElementById('dobbyBox');
     dobby.style.display = 'none';
-    window.location.reload();
 }
