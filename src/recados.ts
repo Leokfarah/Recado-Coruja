@@ -134,10 +134,7 @@ function mostraModal() {
 }
 
 function apagarMensagem(id: number) {
-    mostradobby()
-
-    const dobbyCancell = document.getElementById('cancelDobby') as HTMLElement;
-    dobbyCancell.addEventListener('click', escondeDobby)
+    mostraDobby()
 
     const confirmDobby = document.getElementById('confirmDobby') as HTMLElement;
     confirmDobby.addEventListener('click', () => {
@@ -148,6 +145,9 @@ function apagarMensagem(id: number) {
         imprimeRecados()
         escondeDobby()
     })
+
+    const dobbyCancell = document.getElementById('cancelDobby') as HTMLElement;
+    dobbyCancell.addEventListener('click', escondeDobby)
 }
 
 function reset() {
@@ -167,7 +167,7 @@ function escondeHagrid() {
     hagrid.style.display = 'none'
 }
 
-function mostradobby() {
+function mostraDobby() {
     let dobby = document.getElementById('dobbyBox') as HTMLElement;
     dobby.style.display = 'block'
 }
@@ -175,4 +175,5 @@ function mostradobby() {
 function escondeDobby() {
     let dobby = document.getElementById('dobbyBox') as HTMLElement;
     dobby.style.display = 'none'
+    window.location.reload()
 }

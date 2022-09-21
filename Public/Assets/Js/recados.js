@@ -107,9 +107,7 @@ function mostraModal() {
     modal.style.display = 'block';
 }
 function apagarMensagem(id) {
-    mostradobby();
-    const dobbyCancell = document.getElementById('cancelDobby');
-    dobbyCancell.addEventListener('click', escondeDobby);
+    mostraDobby();
     const confirmDobby = document.getElementById('confirmDobby');
     confirmDobby.addEventListener('click', () => {
         const remove = recados.filter((recado) => recado.id !== id);
@@ -118,6 +116,8 @@ function apagarMensagem(id) {
         imprimeRecados();
         escondeDobby();
     });
+    const dobbyCancell = document.getElementById('cancelDobby');
+    dobbyCancell.addEventListener('click', escondeDobby);
 }
 function reset() {
     let tarefa = document.getElementById('tarefa');
@@ -133,11 +133,12 @@ function escondeHagrid() {
     let hagrid = document.getElementById('hagridAlert');
     hagrid.style.display = 'none';
 }
-function mostradobby() {
+function mostraDobby() {
     let dobby = document.getElementById('dobbyBox');
     dobby.style.display = 'block';
 }
 function escondeDobby() {
     let dobby = document.getElementById('dobbyBox');
     dobby.style.display = 'none';
+    window.location.reload();
 }
