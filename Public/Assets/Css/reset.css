@@ -6,7 +6,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    font-family: 'Franklin Gothic Medium', Arial Narrow, Arial, sans-serif;
-    color: rgba(255, 255, 255, 0.688);
+    font-family: 'Franklin Gothic Medium', Arial Narrow, Arial, sans-serif !important;
+    color: rgba(255, 255, 255, 0.688) !important;
     background-color: #0d1117;
 }

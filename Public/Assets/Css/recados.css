@@ -108,7 +108,7 @@
         background-color: #202328;
         opacity: 95%;
         padding: 20px;
-        width: 82%;
+        width: 80%;
         border-radius: 15px;
         margin-bottom: 20px;
     }
@@ -524,6 +524,8 @@
         opacity: 95%;
         padding: 15px;
         text-align: justify;
+        border-radius: 15px;
+        margin: 0 20px;
     }
 
     #tarefa {
@@ -567,7 +569,7 @@
     .apagarBtn {
         font-size: clamp(0.2rem, 3vw, 0.9rem);
         height: 2.2vh;
-        width: 4.8vw;
+        width: 40%;
         border-radius: 3px;
         border: rgb(243, 35, 35) 1px solid;
     }
@@ -588,7 +590,7 @@
     .editarBtn {
         font-size: clamp(0.2rem, 3vw, 0.9rem);
         height: 2.2vh;
-        width: 4.8vw;
+        width: 40%;
         border-radius: 3px;
         margin-left: 4px;
         border: rgb(85, 190, 24) 1px solid;

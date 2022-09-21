@@ -21,7 +21,7 @@ criarAcc.addEventListener('click', (e) => {
             setTimeout(() => {
                 escondeLuna();
             }, 3000);
-            resetCampos(email.value, password.value, password2.value);
+            resetCampos(email, password, password2);
             setTimeout(() => {
                 window.location.href = 'index.html';
             }, 3000);
@@ -103,9 +103,9 @@ function buscarBd() {
     return [];
 }
 function resetCampos(email, password, password2) {
-    email = '';
-    password = '';
-    password2 = '';
+    email.value = '';
+    password.value = '';
+    password2.value = '';
 }
 function mostraDumbledore() {
     const dumbledoreAlert = document.getElementById('dumbledoreAlert');
@@ -114,10 +114,6 @@ function mostraDumbledore() {
 function escondeDumbledore() {
     const dumbledoreAlert = document.getElementById('dumbledoreAlert');
     dumbledoreAlert.style.display = 'none';
-}
-function escondeDumbledorePass() {
-    const dumbledorePass = document.getElementById('dumbledoreBox');
-    dumbledorePass.style.display = 'none';
 }
 function mostraMcgonagall1() {
     const mcGonagallAlert = document.getElementById('mcgonagallAlert1');

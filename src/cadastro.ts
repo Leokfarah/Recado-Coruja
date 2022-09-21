@@ -25,7 +25,7 @@ criarAcc.addEventListener('click', (e) => {
     if (emailOk) {
 
         if (validarDados(email.value, password.value, password2.value)) {
-            const usuario = {
+            const usuario: User = {
                 login: email.value,
                 password: password.value,
                 recados: [],
@@ -37,7 +37,7 @@ criarAcc.addEventListener('click', (e) => {
             setTimeout(() => {
                 escondeLuna()
             }, 3000)
-            resetCampos(email.value, password.value, password2.value)
+            resetCampos(email, password, password2)
             setTimeout(() => {
                 window.location.href = 'index.html'
             }, 3000)
@@ -51,7 +51,7 @@ showDumbledoreAlert.addEventListener('focus', mostraDumbledore)
 const hideDumbledoreAlert = document.getElementById('newPassword') as HTMLInputElement;
 hideDumbledoreAlert.addEventListener('blur', escondeDumbledore)
 
-function verificarEmail(email: string): Boolean {
+function verificarEmail(email: string): boolean {
 
     let existe = usuarios.some((valor: User) => valor.login === email)
 
@@ -120,11 +120,11 @@ function validarDados(email: string, password: string, password2: string): boole
 
 }
 
-function salvarDados(usuarios: User) {
+function salvarDados(usuarios: Array<User>): void {
     localStorage.setItem('usuarios', JSON.stringify(usuarios))
 }
 
-function buscarBd() {
+function buscarBd(): Array<User> {
     const usuarios = localStorage.getItem('usuarios') || []
 
     if (typeof usuarios === 'string') {
@@ -133,91 +133,86 @@ function buscarBd() {
     return []
 }
 
-function resetCampos(email: string, password: string, password2: string): void {
-    email = ''
-    password = ''
-    password2 = ''
+function resetCampos(email: HTMLInputElement, password: HTMLInputElement, password2: HTMLInputElement): void {
+    email.value = ''
+    password.value = ''
+    password2.value = ''
 }
 
-function mostraDumbledore() {
-    const dumbledoreAlert = document.getElementById('dumbledoreAlert') as HTMLElement;
+function mostraDumbledore(): void {
+    const dumbledoreAlert = document.getElementById('dumbledoreAlert') as HTMLImageElement;
     dumbledoreAlert.style.display = 'block'
 }
 
-function escondeDumbledore() {
-    const dumbledoreAlert = document.getElementById('dumbledoreAlert') as HTMLElement;
+function escondeDumbledore(): void {
+    const dumbledoreAlert = document.getElementById('dumbledoreAlert') as HTMLImageElement;
     dumbledoreAlert.style.display = 'none'
 }
 
-function escondeDumbledorePass() {
-    const dumbledorePass = document.getElementById('dumbledoreBox') as HTMLElement;
-    dumbledorePass.style.display = 'none'
-}
-
-function mostraMcgonagall1() {
-    const mcGonagallAlert = document.getElementById('mcgonagallAlert1') as HTMLElement;
+function mostraMcgonagall1(): void {
+    const mcGonagallAlert = document.getElementById('mcgonagallAlert1') as HTMLImageElement;
     mcGonagallAlert.style.display = 'block'
 }
 
-function escondeMcgonagall1() {
-    const mcGonagallAlert = document.getElementById('mcgonagallAlert1') as HTMLElement;
+function escondeMcgonagall1(): void {
+    const mcGonagallAlert = document.getElementById('mcgonagallAlert1') as HTMLImageElement;
     mcGonagallAlert.style.display = 'none'
 }
 
-function mostraMcgonagall2() {
-    const mcGonagallAlert = document.getElementById('mcgonagallAlert2') as HTMLElement;
+function mostraMcgonagall2(): void {
+    const mcGonagallAlert = document.getElementById('mcgonagallAlert2') as HTMLImageElement;
     mcGonagallAlert.style.display = 'block'
 }
-function escondeMcgonagall2() {
-    const mcGonagallAlert = document.getElementById('mcgonagallAlert2') as HTMLElement;
+function escondeMcgonagall2(): void {
+    const mcGonagallAlert = document.getElementById('mcgonagallAlert2') as HTMLImageElement;
     mcGonagallAlert.style.display = 'none'
 }
 
-function mostraMcgonagall3() {
-    const mcGonagallAlert = document.getElementById('mcgonagallAlert3') as HTMLElement;
+function mostraMcgonagall3(): void {
+    const mcGonagallAlert = document.getElementById('mcgonagallAlert3') as HTMLImageElement;
     mcGonagallAlert.style.display = 'block'
 }
-function escondeMcgonagall3() {
-    const mcGonagallAlert = document.getElementById('mcgonagallAlert3') as HTMLElement;
+function escondeMcgonagall3(): void {
+    const mcGonagallAlert = document.getElementById('mcgonagallAlert3') as HTMLImageElement;
     mcGonagallAlert.style.display = 'none'
 }
 
-function mostraHermione1() {
-    const hermioneAlert = document.getElementById('hermioneAlert1') as HTMLElement;
+function mostraHermione1(): void {
+    const hermioneAlert = document.getElementById('hermioneAlert1') as HTMLImageElement;
     hermioneAlert.style.display = 'block'
 }
 
-function escondeHermione1() {
-    const hermioneAlert = document.getElementById('hermioneAlert1') as HTMLElement;
+function escondeHermione1(): void {
+    const hermioneAlert = document.getElementById('hermioneAlert1') as HTMLImageElement;
     hermioneAlert.style.display = 'none'
 }
 
-function mostraHermione2() {
-    const hermioneAlert = document.getElementById('hermioneAlert2') as HTMLElement;
+function mostraHermione2(): void {
+    const hermioneAlert = document.getElementById('hermioneAlert2') as HTMLImageElement;
     hermioneAlert.style.display = 'block'
 }
 
-function escondeHermione2() {
-    const hermioneAlert = document.getElementById('hermioneAlert2') as HTMLElement;
+function escondeHermione2(): void {
+    const hermioneAlert = document.getElementById('hermioneAlert2') as HTMLImageElement;
     hermioneAlert.style.display = 'none'
 }
 
-function mostraHermione3() {
-    const hermioneAlert = document.getElementById('hermioneAlert3') as HTMLElement;
+function mostraHermione3(): void {
+    const hermioneAlert = document.getElementById('hermioneAlert3') as HTMLImageElement;
     hermioneAlert.style.display = 'block'
 }
 
-function escondeHermione3() {
-    const hermioneAlert = document.getElementById('hermioneAlert3') as HTMLElement;
+function escondeHermione3(): void {
+    const hermioneAlert = document.getElementById('hermioneAlert3') as HTMLImageElement;
     hermioneAlert.style.display = 'none'
 }
 
-function mostraLuna() {
-    const lunaAlert = document.getElementById('lunaAlert') as HTMLElement;
+function mostraLuna(): void {
+    const lunaAlert = document.getElementById('lunaAlert') as HTMLImageElement;
     lunaAlert.style.display = 'block'
 }
 
-function escondeLuna() {
-    const lunaAlert = document.getElementById('lunaAlert') as HTMLElement;
+function escondeLuna(): void {
+    const lunaAlert = document.getElementById('lunaAlert') as HTMLImageElement;
     lunaAlert.style.display = 'none'
 }

@@ -1,6 +1,5 @@
 type UserLog = {
     login: string,
-    password?: string,
     recados: Recados[],
 }
 
@@ -17,9 +16,9 @@ logar.addEventListener('click', (e) => {
     const log = buscarBdLog()
 
 
-    let verificarUsuario = log.findIndex((usuario: UserLog) => usuario.login === email.value && usuario.password === password.value)
+    let verificarUsuario = log.findIndex((usuario) => usuario.login === email.value && usuario.password === password.value)
     if (verificarUsuario >= 0) {
-        const usuarioLogado = {
+        const usuarioLogado: UserLog = {
             login: log[verificarUsuario].login,
             recados: log[verificarUsuario].recados,
         }
@@ -38,7 +37,7 @@ logar.addEventListener('click', (e) => {
     }
 })
 
-function buscarBdLog() {
+function buscarBdLog(): Array<User> {
     const usuarios = localStorage.getItem('usuarios') || []
 
     if (typeof usuarios === 'string') {
@@ -47,16 +46,16 @@ function buscarBdLog() {
     return []
 }
 
-function salvarDadosLog(usuarios: UserLog) {
+function salvarDadosLog(usuarios: UserLog): void {
     localStorage.setItem('usuarioLogado', JSON.stringify(usuarios))
 }
 
-function mostraDolores() {
-    let dolores = document.getElementById('doloresAlert') as HTMLElement;
+function mostraDolores(): void {
+    let dolores = document.getElementById('doloresAlert') as HTMLImageElement;
     dolores.style.display = 'block'
 }
 
-function escondeDolores() {
-    let dolores = document.getElementById('doloresAlert') as HTMLElement;
+function escondeDolores(): void {
+    let dolores = document.getElementById('doloresAlert') as HTMLImageElement;
     dolores.style.display = 'none'
 }

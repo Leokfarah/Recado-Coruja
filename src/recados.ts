@@ -11,11 +11,11 @@ logout.addEventListener('click', () => {
     }, 1000)
 })
 
-let { login, recados }: UserLog = JSON.parse(localStorage.getItem('usuarioLogado')!);
+let { login, recados }: User = JSON.parse(localStorage.getItem('usuarioLogado')!);
 
 imprimeRecados()
 
-function atualizaBdRecados() {
+function atualizaBdRecados(): void {
     let usuarioLogado: Array<User> = JSON.parse(localStorage.getItem('usuarios')!);
 
     usuarioLogado.forEach(element => {
@@ -31,7 +31,7 @@ const salvarMensagemBtn = document.getElementById('salvarBtn') as HTMLButtonElem
 salvarMensagemBtn.addEventListener('click', criarRecados)
 
 
-function criarRecados() {
+function criarRecados(): void {
     let id = 1
     const tarefa = (document.getElementById('tarefa') as HTMLInputElement).value;
     const descricao = (document.getElementById('descricao') as HTMLInputElement).value;
@@ -62,7 +62,7 @@ function criarRecados() {
     reset()
 }
 
-function imprimeRecados() {
+function imprimeRecados(): void {
     let table = document.getElementById('tabelaRecados') as HTMLTableElement;
     table.innerHTML = ''
 
@@ -85,7 +85,7 @@ function imprimeRecados() {
 let modalTarefa = document.getElementById('editTarefa') as HTMLInputElement;
 let modalDescricao = document.getElementById('editDescricao') as HTMLInputElement;
 
-function editarMensagem(id: number) {
+function editarMensagem(id: number): void {
     setTimeout(() => {
         mostraModal()
         modalImprimeRecado(id)
@@ -103,17 +103,17 @@ function editarMensagem(id: number) {
     cancelarBtnModal.addEventListener('click', fechaModal)
 }
 
-function modalImprimeRecado(id: number) {
+function modalImprimeRecado(id: number): void {
     const recadoTemp = procuraRecado(id)
     modalTarefa.value = recados[recadoTemp].tarefa
     modalDescricao.value = recados[recadoTemp].descricao
 }
 
-function procuraRecado(id: number) {
+function procuraRecado(id: number): number {
     return recados.findIndex((recado) => recado.id === id)
 }
 
-function modalEditaRecado(id: number) {
+function modalEditaRecado(id: number): void {
     const recadoTemp = procuraRecado(id)
     recados[recadoTemp].tarefa = modalTarefa.value
     recados[recadoTemp].descricao = modalDescricao.value
@@ -122,19 +122,17 @@ function modalEditaRecado(id: number) {
     imprimeRecados()
 }
 
-function fechaModal() {
+function fechaModal(): void {
     let modal = document.getElementById('modal') as HTMLDivElement;
     modal.style.display = 'none'
 }
 
-function mostraModal() {
+function mostraModal(): void {
     let modal = document.getElementById('modal') as HTMLDivElement;
     modal.style.display = 'block'
 }
 
-
-
-function apagarMensagem(id: number) {
+function apagarMensagem(id: number): void {
     mostraDobby()
 
     const confirmDobby = document.getElementById('confirmDobby') as HTMLButtonElement;
@@ -158,22 +156,22 @@ function reset(): void {
     descricao.value = ''
 }
 
-function mostraHagrid() {
+function mostraHagrid(): void {
     let hagrid = document.getElementById('hagridAlert') as HTMLImageElement;
     hagrid.style.display = 'block'
 }
 
-function escondeHagrid() {
+function escondeHagrid(): void {
     let hagrid = document.getElementById('hagridAlert') as HTMLImageElement;
     hagrid.style.display = 'none'
 }
 
-function mostraDobby() {
+function mostraDobby(): void {
     let dobby = document.getElementById('dobbyBox') as HTMLDivElement;
     dobby.style.display = 'block'
 }
 
-function escondeDobby() {
+function escondeDobby(): void {
     let dobby = document.getElementById('dobbyBox') as HTMLDivElement;
     dobby.style.display = 'none'
 }
